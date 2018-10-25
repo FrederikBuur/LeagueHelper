@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E8F51A55337AA2DF2EA9CC /* Pods_LeagueHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D9D4341FC393A605D89EC3 /* Pods_LeagueHelper.framework */; };
 		DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB7215A2181C0A2003B4341 /* AppDelegate.swift */; };
 		DDB721602181C0A2003B4341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB7215E2181C0A2003B4341 /* Main.storyboard */; };
 		DDB721622181C0A3003B4341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB721612181C0A3003B4341 /* Assets.xcassets */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40D9D4341FC393A605D89EC3 /* Pods_LeagueHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10A2DA13DA90E31BC731376 /* Pods-LeagueHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper.release.xcconfig"; sourceTree = "<group>"; };
 		DDB721572181C0A2003B4341 /* LeagueHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB7215A2181C0A2003B4341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB7215F2181C0A2003B4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,6 +29,7 @@
 		DDB721722181EF2A003B4341 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DDB721752181EFE5003B4341 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		DDB721772181FB72003B4341 /* SummonerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerController.swift; sourceTree = "<group>"; };
+		FF9E8414E42034CF903875DF /* Pods-LeagueHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E8F51A55337AA2DF2EA9CC /* Pods_LeagueHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1865E494BC1FC7741FCDBB22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				40D9D4341FC393A605D89EC3 /* Pods_LeagueHelper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AC252FC25948BCA353E4B4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF9E8414E42034CF903875DF /* Pods-LeagueHelper.debug.xcconfig */,
+				D10A2DA13DA90E31BC731376 /* Pods-LeagueHelper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DDB7214E2181C0A2003B4341 = {
 			isa = PBXGroup;
 			children = (
 				DDB721592181C0A2003B4341 /* LeagueHelper */,
 				DDB721582181C0A2003B4341 /* Products */,
+				9AC252FC25948BCA353E4B4C /* Pods */,
+				1865E494BC1FC7741FCDBB22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,9 +157,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDB721692181C0A3003B4341 /* Build configuration list for PBXNativeTarget "LeagueHelper" */;
 			buildPhases = (
+				02E81664E7C1142102E2E82B /* [CP] Check Pods Manifest.lock */,
 				DDB721532181C0A2003B4341 /* Sources */,
 				DDB721542181C0A2003B4341 /* Frameworks */,
 				DDB721552181C0A2003B4341 /* Resources */,
+				A7ABA17BEE3E5E47526F99D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +217,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02E81664E7C1142102E2E82B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LeagueHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7ABA17BEE3E5E47526F99D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DDB721532181C0A2003B4341 /* Sources */ = {
@@ -344,6 +433,7 @@
 		};
 		DDB7216A2181C0A3003B4341 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF9E8414E42034CF903875DF /* Pods-LeagueHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -361,6 +451,7 @@
 		};
 		DDB7216B2181C0A3003B4341 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D10A2DA13DA90E31BC731376 /* Pods-LeagueHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
