@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6u-tY-2p8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item 3-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.11536715416200727" green="0.07683969542838498" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 3" id="x59-ho-aFd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="622"/>
+        </scene>
+        <!--Static data-->
+        <scene sceneID="cOX-8P-EZU">
+            <objects>
+                <viewController id="NBM-ZS-Bxq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f1T-gy-lKm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.075418627940797012" green="1" blue="0.033925668297346556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="1mn-4G-Rtc"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Static data" id="0Kt-vz-a65"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f13-yX-LW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="-104"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="jZA-bz-D8H">
+            <objects>
+                <viewController id="8h7-xT-0Uq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oFA-54-U42">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.086669680891531264" blue="0.01974212316042101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="i7C-25-MlA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="iwd-m4-50R"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rmq-m1-pnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="-768"/>
+        </scene>
+        <!--Setup View Controller-->
+        <scene sceneID="QSt-gy-GOU">
+            <objects>
+                <viewController id="D6u-tY-2p8" customClass="SetupViewController" customModule="LeagueHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rdI-cE-CMp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FS6-e2-bQ2">
+                                <rect key="frame" x="74.5" y="287.5" width="226" height="112.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in your summoner name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-0A-uLI">
+                                        <rect key="frame" x="0.0" y="0.0" width="226" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
+                                        <rect key="frame" x="13" y="36.5" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="LeI-Z2-FXB"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wb-NU-G0A">
+                                        <rect key="frame" x="89" y="82.5" width="48" height="30"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchSummoner:" destination="D6u-tY-2p8" eventType="touchUpInside" id="iHT-qB-fcS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FS6-e2-bQ2" firstAttribute="centerX" secondItem="jFS-vL-vOX" secondAttribute="centerX" id="EE0-1R-a8X"/>
+                            <constraint firstItem="FS6-e2-bQ2" firstAttribute="centerY" secondItem="jFS-vL-vOX" secondAttribute="centerY" id="af4-uQ-sZ7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jFS-vL-vOX"/>
+                    </view>
+                    <connections>
+                        <outlet property="setupLabel" destination="gqt-0A-uLI" id="XaS-G3-NGe"/>
+                        <outlet property="summonerNameTextField" destination="czG-De-51B" id="HWv-Ai-Seu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCN-KI-zqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1530.4000000000001" y="-111.0944527736132"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="U9I-JY-J0b">
+            <objects>
+                <tabBarController id="lxo-G3-zdy" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f0O-UO-l3B">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="8h7-xT-0Uq" kind="relationship" relationship="viewControllers" id="jHu-wX-k2I"/>
+                        <segue destination="NBM-ZS-Bxq" kind="relationship" relationship="viewControllers" id="oGs-xj-CBo"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ygw-1Z-jCU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wo0-Bi-7bu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-583" y="-105"/>
+        </scene>
+    </scenes>
+</document>

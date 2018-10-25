@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB7215A2181C0A2003B4341 /* AppDelegate.swift */; };
-		DDB7215D2181C0A2003B4341 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB7215C2181C0A2003B4341 /* ViewController.swift */; };
 		DDB721602181C0A2003B4341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB7215E2181C0A2003B4341 /* Main.storyboard */; };
 		DDB721622181C0A3003B4341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB721612181C0A3003B4341 /* Assets.xcassets */; };
 		DDB721652181C0A3003B4341 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB721632181C0A3003B4341 /* LaunchScreen.storyboard */; };
+		DDB721732181EF2A003B4341 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB721722181EF2A003B4341 /* ProfileViewController.swift */; };
+		DDB721762181EFE5003B4341 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB721752181EFE5003B4341 /* SetupViewController.swift */; };
+		DDB721782181FB72003B4341 /* SummonerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB721772181FB72003B4341 /* SummonerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DDB721572181C0A2003B4341 /* LeagueHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB7215A2181C0A2003B4341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DDB7215C2181C0A2003B4341 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DDB7215F2181C0A2003B4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDB721612181C0A3003B4341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB721642181C0A3003B4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDB721662181C0A3003B4341 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDB721722181EF2A003B4341 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DDB721752181EFE5003B4341 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
+		DDB721772181FB72003B4341 /* SummonerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,72 @@
 		DDB721592181C0A2003B4341 /* LeagueHelper */ = {
 			isa = PBXGroup;
 			children = (
-				DDB7215A2181C0A2003B4341 /* AppDelegate.swift */,
-				DDB7215C2181C0A2003B4341 /* ViewController.swift */,
+				DDB721702181EA44003B4341 /* controllers */,
+				DDB7216F2181EA1D003B4341 /* pages */,
+				DDB7216E2181EA15003B4341 /* models */,
+				DDB7216D2181E9DC003B4341 /* supportfiles */,
+				DDB7216C2181E9C9003B4341 /* api */,
+			);
+			path = LeagueHelper;
+			sourceTree = "<group>";
+		};
+		DDB7216C2181E9C9003B4341 /* api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		DDB7216D2181E9DC003B4341 /* supportfiles */ = {
+			isa = PBXGroup;
+			children = (
 				DDB7215E2181C0A2003B4341 /* Main.storyboard */,
 				DDB721612181C0A3003B4341 /* Assets.xcassets */,
 				DDB721632181C0A3003B4341 /* LaunchScreen.storyboard */,
 				DDB721662181C0A3003B4341 /* Info.plist */,
+				DDB7215A2181C0A2003B4341 /* AppDelegate.swift */,
 			);
-			path = LeagueHelper;
+			path = supportfiles;
+			sourceTree = "<group>";
+		};
+		DDB7216E2181EA15003B4341 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		DDB7216F2181EA1D003B4341 /* pages */ = {
+			isa = PBXGroup;
+			children = (
+				DDB721742181EF71003B4341 /* setup */,
+				DDB721712181EED5003B4341 /* profile */,
+			);
+			path = pages;
+			sourceTree = "<group>";
+		};
+		DDB721702181EA44003B4341 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDB721772181FB72003B4341 /* SummonerController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		DDB721712181EED5003B4341 /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				DDB721722181EF2A003B4341 /* ProfileViewController.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		DDB721742181EF71003B4341 /* setup */ = {
+			isa = PBXGroup;
+			children = (
+				DDB721752181EFE5003B4341 /* SetupViewController.swift */,
+			);
+			path = setup;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +197,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDB7215D2181C0A2003B4341 /* ViewController.swift in Sources */,
+				DDB721732181EF2A003B4341 /* ProfileViewController.swift in Sources */,
+				DDB721782181FB72003B4341 /* SummonerController.swift in Sources */,
+				DDB721762181EFE5003B4341 /* SetupViewController.swift in Sources */,
 				DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +347,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LeagueHelper/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LeagueHelper/supportfiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = LeagueHelper/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/LeagueHelper/supportfiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
