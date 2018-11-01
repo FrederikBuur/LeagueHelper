@@ -44,18 +44,30 @@
         <!--Profile-->
         <scene sceneID="jZA-bz-D8H">
             <objects>
-                <viewController id="8h7-xT-0Uq" sceneMemberID="viewController">
+                <viewController id="8h7-xT-0Uq" customClass="ProfileViewController" customModule="LeagueHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oFA-54-U42">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-zI-AuY">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.086669680891531264" blue="0.01974212316042101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="i7C-25-MlA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="iwd-m4-50R"/>
+                    <connections>
+                        <outlet property="label" destination="MDv-zI-AuY" id="YH2-7q-rpE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmq-m1-pnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="-768"/>
+            <point key="canvasLocation" x="688.79999999999995" y="-768.66566716641682"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="QSt-gy-GOU">
@@ -103,11 +115,12 @@
                     <connections>
                         <outlet property="setupLabel" destination="gqt-0A-uLI" id="XaS-G3-NGe"/>
                         <outlet property="summonerNameTextField" destination="czG-De-51B" id="HWv-Ai-Seu"/>
+                        <segue destination="lxo-G3-zdy" kind="show" identifier="showProfile" id="6YN-ZQ-TLt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCN-KI-zqy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1530.4000000000001" y="-111.0944527736132"/>
+            <point key="canvasLocation" x="-1671" y="-105"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="U9I-JY-J0b">

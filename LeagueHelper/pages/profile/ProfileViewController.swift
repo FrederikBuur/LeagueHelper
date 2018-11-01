@@ -10,10 +10,17 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    var mSummoner: Summoner?
+    
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let sum = mSummoner {
+            label.text = "\(sum.name), level:\(sum.summonerLevel) "
+        }
     }
     
 

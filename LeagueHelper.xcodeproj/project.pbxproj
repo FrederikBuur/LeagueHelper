@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04E8F51A55337AA2DF2EA9CC /* Pods_LeagueHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D9D4341FC393A605D89EC3 /* Pods_LeagueHelper.framework */; };
+		DD7134CA218B0BD200C5A3FA /* LeagueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7134C9218B0BD200C5A3FA /* LeagueRouter.swift */; };
+		DD7134CC218B1ACC00C5A3FA /* Summoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7134CB218B1ACC00C5A3FA /* Summoner.swift */; };
 		DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB7215A2181C0A2003B4341 /* AppDelegate.swift */; };
 		DDB721602181C0A2003B4341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB7215E2181C0A2003B4341 /* Main.storyboard */; };
 		DDB721622181C0A3003B4341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB721612181C0A3003B4341 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		40D9D4341FC393A605D89EC3 /* Pods_LeagueHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10A2DA13DA90E31BC731376 /* Pods-LeagueHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper.release.xcconfig"; sourceTree = "<group>"; };
+		DD7134C9218B0BD200C5A3FA /* LeagueRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueRouter.swift; sourceTree = "<group>"; };
+		DD7134CB218B1ACC00C5A3FA /* Summoner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summoner.swift; sourceTree = "<group>"; };
 		DDB721572181C0A2003B4341 /* LeagueHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB7215A2181C0A2003B4341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB7215F2181C0A2003B4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		DDB7216C2181E9C9003B4341 /* api */ = {
 			isa = PBXGroup;
 			children = (
+				DD7134C9218B0BD200C5A3FA /* LeagueRouter.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -113,6 +118,7 @@
 		DDB7216E2181EA15003B4341 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				DD7134CB218B1ACC00C5A3FA /* Summoner.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -288,8 +294,10 @@
 			files = (
 				DDB721732181EF2A003B4341 /* ProfileViewController.swift in Sources */,
 				DDB721782181FB72003B4341 /* SummonerController.swift in Sources */,
+				DD7134CA218B0BD200C5A3FA /* LeagueRouter.swift in Sources */,
 				DDB721762181EFE5003B4341 /* SetupViewController.swift in Sources */,
 				DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */,
+				DD7134CC218B1ACC00C5A3FA /* Summoner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
