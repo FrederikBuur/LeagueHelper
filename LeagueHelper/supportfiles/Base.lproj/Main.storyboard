@@ -25,21 +25,65 @@
             </objects>
             <point key="canvasLocation" x="689" y="622"/>
         </scene>
-        <!--Static data-->
-        <scene sceneID="cOX-8P-EZU">
+        <!--Item-->
+        <scene sceneID="WjD-Q1-WzR">
             <objects>
-                <viewController id="NBM-ZS-Bxq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f1T-gy-lKm">
+                <tableViewController id="jA3-P4-dcS" customClass="ChampionsTableViewController" customModule="LeagueHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DPw-4w-KcY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.075418627940797012" green="1" blue="0.033925668297346556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="1mn-4G-Rtc"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Static data" id="0Kt-vz-a65"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f13-yX-LW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="championCell" rowHeight="129" id="NSD-VC-XDj" customClass="ChampionTableViewCell" customModule="LeagueHelper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="129"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NSD-VC-XDj" id="Ej6-aY-yaI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeU-pG-XLa">
+                                            <rect key="frame" x="16" y="24.5" width="80" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="MsO-YY-qc3"/>
+                                                <constraint firstAttribute="width" constant="80" id="byq-Ye-Vb1"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Champion name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-p9-ahp">
+                                            <rect key="frame" x="104" y="24" width="198" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Champion title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-NU-Qgb">
+                                            <rect key="frame" x="104" y="54" width="145" height="51"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="LeU-pG-XLa" firstAttribute="centerY" secondItem="Ej6-aY-yaI" secondAttribute="centerY" id="i1O-FZ-2kq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="championImage" destination="LeU-pG-XLa" id="UnE-4d-5dg"/>
+                                    <outlet property="championName" destination="2Hr-p9-ahp" id="x6S-3g-TC4"/>
+                                    <outlet property="championTitle" destination="fjN-NU-Qgb" id="hyn-Gq-GzC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jA3-P4-dcS" id="8ip-rS-bfG"/>
+                            <outlet property="delegate" destination="jA3-P4-dcS" id="2Oz-2e-wzS"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="N83-Q8-4rt"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYO-dr-5Gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="-104"/>
+            <point key="canvasLocation" x="688.79999999999995" y="-106.59670164917542"/>
         </scene>
         <!--Profile-->
         <scene sceneID="jZA-bz-D8H">
@@ -133,8 +177,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="8h7-xT-0Uq" kind="relationship" relationship="viewControllers" id="jHu-wX-k2I"/>
-                        <segue destination="NBM-ZS-Bxq" kind="relationship" relationship="viewControllers" id="oGs-xj-CBo"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ygw-1Z-jCU"/>
+                        <segue destination="jA3-P4-dcS" kind="relationship" relationship="viewControllers" id="5gN-6t-HMe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wo0-Bi-7bu" userLabel="First Responder" sceneMemberID="firstResponder"/>

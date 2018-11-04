@@ -10,6 +10,12 @@
 		04E8F51A55337AA2DF2EA9CC /* Pods_LeagueHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D9D4341FC393A605D89EC3 /* Pods_LeagueHelper.framework */; };
 		DD7134CA218B0BD200C5A3FA /* LeagueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7134C9218B0BD200C5A3FA /* LeagueRouter.swift */; };
 		DD7134CC218B1ACC00C5A3FA /* Summoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7134CB218B1ACC00C5A3FA /* Summoner.swift */; };
+		DD7FB698218F9F1800F6E83D /* ChampionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB697218F9F1800F6E83D /* ChampionsTableViewController.swift */; };
+		DD7FB69B218FA0EE00F6E83D /* ChampionsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB69A218FA0EE00F6E83D /* ChampionsResponse.swift */; };
+		DD7FB69D218FA18B00F6E83D /* Champion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB69C218FA18B00F6E83D /* Champion.swift */; };
+		DD7FB69F218FA26100F6E83D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB69E218FA26100F6E83D /* Image.swift */; };
+		DD7FB6A1218FA30100F6E83D /* ChampionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB6A0218FA30100F6E83D /* ChampionTableViewCell.swift */; };
+		DD7FB6A3218FA73300F6E83D /* ChampionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB6A2218FA73300F6E83D /* ChampionController.swift */; };
 		DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB7215A2181C0A2003B4341 /* AppDelegate.swift */; };
 		DDB721602181C0A2003B4341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB7215E2181C0A2003B4341 /* Main.storyboard */; };
 		DDB721622181C0A3003B4341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB721612181C0A3003B4341 /* Assets.xcassets */; };
@@ -24,6 +30,12 @@
 		D10A2DA13DA90E31BC731376 /* Pods-LeagueHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper.release.xcconfig"; sourceTree = "<group>"; };
 		DD7134C9218B0BD200C5A3FA /* LeagueRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueRouter.swift; sourceTree = "<group>"; };
 		DD7134CB218B1ACC00C5A3FA /* Summoner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summoner.swift; sourceTree = "<group>"; };
+		DD7FB697218F9F1800F6E83D /* ChampionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionsTableViewController.swift; sourceTree = "<group>"; };
+		DD7FB69A218FA0EE00F6E83D /* ChampionsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionsResponse.swift; sourceTree = "<group>"; };
+		DD7FB69C218FA18B00F6E83D /* Champion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Champion.swift; sourceTree = "<group>"; };
+		DD7FB69E218FA26100F6E83D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		DD7FB6A0218FA30100F6E83D /* ChampionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionTableViewCell.swift; sourceTree = "<group>"; };
+		DD7FB6A2218FA73300F6E83D /* ChampionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionController.swift; sourceTree = "<group>"; };
 		DDB721572181C0A2003B4341 /* LeagueHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB7215A2181C0A2003B4341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB7215F2181C0A2003B4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -63,6 +75,26 @@
 				D10A2DA13DA90E31BC731376 /* Pods-LeagueHelper.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD7FB696218F9EDC00F6E83D /* champions */ = {
+			isa = PBXGroup;
+			children = (
+				DD7FB697218F9F1800F6E83D /* ChampionsTableViewController.swift */,
+				DD7FB6A0218FA30100F6E83D /* ChampionTableViewCell.swift */,
+				DD7FB6A2218FA73300F6E83D /* ChampionController.swift */,
+			);
+			path = champions;
+			sourceTree = "<group>";
+		};
+		DD7FB699218FA0C900F6E83D /* champion */ = {
+			isa = PBXGroup;
+			children = (
+				DD7FB69A218FA0EE00F6E83D /* ChampionsResponse.swift */,
+				DD7FB69C218FA18B00F6E83D /* Champion.swift */,
+				DD7FB69E218FA26100F6E83D /* Image.swift */,
+			);
+			path = champion;
 			sourceTree = "<group>";
 		};
 		DDB7214E2181C0A2003B4341 = {
@@ -118,6 +150,7 @@
 		DDB7216E2181EA15003B4341 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				DD7FB699218FA0C900F6E83D /* champion */,
 				DD7134CB218B1ACC00C5A3FA /* Summoner.swift */,
 			);
 			path = models;
@@ -126,6 +159,7 @@
 		DDB7216F2181EA1D003B4341 /* pages */ = {
 			isa = PBXGroup;
 			children = (
+				DD7FB696218F9EDC00F6E83D /* champions */,
 				DDB721742181EF71003B4341 /* setup */,
 				DDB721712181EED5003B4341 /* profile */,
 			);
@@ -295,9 +329,15 @@
 				DDB721732181EF2A003B4341 /* ProfileViewController.swift in Sources */,
 				DDB721782181FB72003B4341 /* SummonerController.swift in Sources */,
 				DD7134CA218B0BD200C5A3FA /* LeagueRouter.swift in Sources */,
+				DD7FB69B218FA0EE00F6E83D /* ChampionsResponse.swift in Sources */,
+				DD7FB698218F9F1800F6E83D /* ChampionsTableViewController.swift in Sources */,
 				DDB721762181EFE5003B4341 /* SetupViewController.swift in Sources */,
+				DD7FB6A3218FA73300F6E83D /* ChampionController.swift in Sources */,
 				DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */,
 				DD7134CC218B1ACC00C5A3FA /* Summoner.swift in Sources */,
+				DD7FB69D218FA18B00F6E83D /* Champion.swift in Sources */,
+				DD7FB69F218FA26100F6E83D /* Image.swift in Sources */,
+				DD7FB6A1218FA30100F6E83D /* ChampionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
