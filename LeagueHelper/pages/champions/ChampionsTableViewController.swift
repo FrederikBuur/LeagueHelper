@@ -7,14 +7,35 @@
 //
 
 import UIKit
+import RxSwift
+import Alamofire
+import RealmSwift
 
 class ChampionsTableViewController: UITableViewController {
 
-    var champions: [Champion] = []
+    private let disposeBag = DisposeBag()
+    private var champions: [Champion] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //test
+        let controller = ChampionController()
+        controller.getChampions(version: "8.22.1", in: "en_US")
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (championsResponse) in
+                    
+            }, onError: { (error) in
+                if let v = error as? AFError {
+                    if v.responseCode == 404 {
+                       
+                    }
+                }
+            }).disposed(by: disposeBag)
+        
+        
     }
 
     // MARK: - Table view data source

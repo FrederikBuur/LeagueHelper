@@ -1,43 +1,42 @@
 //
-//  LeagueRouter.swift
+//  DataDragonRouter.swift
 //  LeagueHelper
 //
-//  Created by Frederik Buur on 01/11/2018.
+//  Created by Frederik Buur on 08/11/2018.
 //  Copyright © 2018 Frederik Buur. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-public enum LeagueRouter: URLRequestConvertible {
-  
+public enum DataDragonRouter: URLRequestConvertible {
+    
     // constants
     enum Constants {
-        static let baseUrl = "https://euw1.api.riotgames.com/lol"
-        
-        static let apiKey = "RGAPI-e012282a-75d4-4040-8075-5ef52b1f39b0"
+        static let baseUrl = "https://ddragon.leagueoflegends.com"
     }
     
-    case summonerByName(String)
+    case championList(_ version: String, _ region: String)
+    case version
     
     var method: HTTPMethod {
         switch self {
-        case .summonerByName:
+        case .championList, .version:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .summonerByName(let name):
-            return "/summoner/v3/summoners/by-name/\(name)"
+        case .championList(let version, let region):
+            return "/cdn/\(version)/data/\(region)/champion.json"
+        case .version:
+            return "/api/versions.json"
         }
     }
     
     var parameters: [String: Any] {
         switch self {
-        case .summonerByName:
-            return ["api_key": Constants.apiKey]
         default:
             return [:]
         }

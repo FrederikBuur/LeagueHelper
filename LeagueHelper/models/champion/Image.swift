@@ -8,9 +8,25 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
-struct Image {
-    var full: String
-    var sprite: String
-    var group: String
+class Image: Object {
+    @objc dynamic var full = "full"
+    @objc dynamic var sprite = "sprite"
+    @objc dynamic var group = "group"
+    
+//    override init(full: String, sprite: String, group: String) {
+//        self.full = full
+//        self.sprite = sprite
+//        self.group = group
+//    }
+    
+    static func parseJson(json: JSON) -> Image {
+        let img = Image()
+            img.full = json["full"].stringValue
+            img.sprite = json["sprite"].stringValue
+            img.group = json["group"].stringValue
+        return img
+    }
+    
 }

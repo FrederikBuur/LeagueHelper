@@ -8,11 +8,32 @@
 
 import Foundation
 import SwiftyJSON
+import RealmSwift
 
-struct Champion {
-    var id: String
-    var key: Int
-    var name: String
-    var title: String
-    var image: Image
+class Champion: Object {
+    @objc dynamic var id: String = "id"
+    @objc dynamic var key: Int = -1
+    @objc dynamic var name: String = "name"
+    @objc dynamic var title: String = "title"
+    @objc dynamic var image: Image = Image()
+    
+    static func parseChampionArray(json: JSON) -> [Champion] {
+        var champions: [Champion] = []
+        for champion in json.dictionaryValue {
+            let c = Champion.parseChampion(json: champion.value)
+            champions.append(c)
+        }
+        return champions
+    }
+    
+    static func parseChampion(json: JSON) -> Champion {
+        let champion = Champion()
+            champion.id = json["id"].stringValue
+            champion.key = json["key"].intValue
+            champion.name = json["name"].stringValue
+            champion.title = json["title"].stringValue
+            champion.image = Image.parseJson(json: json["image"])
+        return champion
+    }
 }
+

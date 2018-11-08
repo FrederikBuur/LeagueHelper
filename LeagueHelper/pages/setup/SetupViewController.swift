@@ -29,7 +29,8 @@ class SetupViewController: UIViewController {
     }
     
     @IBAction func searchSummoner(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: "showProfile", sender: nil)
+        return
         if let summonerName = summonerNameTextField.text {
             if !summonerName.isEmpty {
                 if isSummonerNameValid(name: summonerName) {

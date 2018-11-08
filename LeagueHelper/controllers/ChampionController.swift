@@ -10,19 +10,24 @@ import Foundation
 import Alamofire
 import RealmSwift
 import RxSwift
+import SwiftyJSON
 
 class ChampionController {
     
-    func getChampions(version: String, in region: String) -> Observable<ChampionsResponse> {
+    func getChampions(version: String, in region: String) -> Observable<[Champion]> {
         return Observable.create({ (emitter) -> Disposable in
             
-            let request = Alamofire.request(LeagueRouter.championList(version, region)).validate().responseJSON { (response) in
+             let request = Alamofire.request(DataDragonRouter.championList(version, region)).validate().responseJSON { (response) in
                 switch response.result {
                 case .success(let value):
                     // parse jason to response object
-                    emitter.onNext(<#T##element: ChampionsResponse##ChampionsResponse#>)
+                    let championsResponse = ChampionsResponse.parseJson(json: JSON(value))
+                    let champions = RealmController.sharedInstance.saveChampionsOrUpdate(champions: <#T##[Champion]#>)(champions: championsResponse.data)
+                    
+                    emitter.onNext(cham)
                     emitter.onCompleted()
                 case .failure(let error):
+                    debugPrint(error.localizedDescription)
                     emitter.onError(error)
                     emitter.onCompleted()
                 }

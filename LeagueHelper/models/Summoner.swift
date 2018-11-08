@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-struct Summoner {
+struct Summoner: Decodable {
     var id: CLong
     var accountId: CLong
     var name: String
