@@ -13,10 +13,13 @@ import RealmSwift
 class Version: Object {
     @objc dynamic var version = ""
     
-    static func getLatestVersion(json: JSON) {
+    static func getLatestVersion(json: JSON) -> Version {
         let version = Version()
-        for version in json {
-            
+        if let latestVersion = json.arrayValue.first?.stringValue {
+            version.version = latestVersion
+        } else {
+            version.version = "8.17.1"
         }
+        return version
     }
 }

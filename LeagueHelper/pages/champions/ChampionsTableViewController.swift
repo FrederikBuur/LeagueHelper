@@ -13,29 +13,60 @@ import RealmSwift
 
 class ChampionsTableViewController: UITableViewController {
 
-    private let disposeBag = DisposeBag()
+    private var controller = DataDragonController()
     private var champions: [Champion] = []
+    
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //test
-        let controller = ChampionController()
-        controller.getChampions(version: "8.22.1", in: "en_US")
+        
+        fetchNewestVersion()
+        
+        champions = RealmController.sharedInstance.getChampions().map{$0}
+        self.tableView.reloadData()
+        
+    }
+    
+    private func fetchNewestVersion() {
+        controller.getLatestVersion()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (latestVersion) in
+                    if let version = RealmController.sharedInstance.getVersion()?.version {
+                        if version.compare( latestVersion.version, options: .numeric) == .orderedAscending {
+                            // newer version exist udpate champions
+                            self.fetchChampions(version: version)
+                        } else {
+                            // champions are already up to date
+                        }
+                    } else {
+                        self.fetchChampions(version: latestVersion.version)
+                    }
+            }, onError: { (error) in
+                
+            }).disposed(by: disposeBag)
+    }
+    
+    private func fetchChampions(version: String) {
+        controller.getChampions(version: version, in: "en_US")
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: { (championsResponse) in
                     
+                    self.champions = championsResponse.data
+                    self.tableView.reloadData()
+                    
+                    print(championsResponse.version)
             }, onError: { (error) in
                 if let v = error as? AFError {
                     if v.responseCode == 404 {
-                       
+                        
                     }
                 }
             }).disposed(by: disposeBag)
-        
-        
     }
 
     // MARK: - Table view data source

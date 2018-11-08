@@ -10,12 +10,12 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 
-class ChampionsResponse: Object {
+class ChampionsResponse {
     
-    @objc dynamic var type = "type"
-    @objc dynamic var format = "format"
-    @objc dynamic var version = "verison"
-    @objc dynamic var data: [Champion] = []
+    var type = "type"
+    var format = "format"
+    var version = "verison"
+    var data: [Champion] = []
     
     static func parseJson(json: JSON) -> ChampionsResponse {
         let championResponse = ChampionsResponse()

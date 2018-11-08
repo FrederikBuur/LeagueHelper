@@ -15,7 +15,7 @@ class Champion: Object {
     @objc dynamic var key: Int = -1
     @objc dynamic var name: String = "name"
     @objc dynamic var title: String = "title"
-    @objc dynamic var image: Image = Image()
+    @objc dynamic var image: Image? = Image()
     
     static func parseChampionArray(json: JSON) -> [Champion] {
         var champions: [Champion] = []

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 3-->
+        <!--Scan Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
@@ -19,16 +19,16 @@
                         <color key="backgroundColor" red="0.11536715416200727" green="0.07683969542838498" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 3" id="x59-ho-aFd"/>
+                    <tabBarItem key="tabBarItem" title="Scan Game" id="x59-ho-aFd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="689" y="622"/>
         </scene>
-        <!--Item-->
+        <!--Champions-->
         <scene sceneID="WjD-Q1-WzR">
             <objects>
-                <tableViewController id="jA3-P4-dcS" customClass="ChampionsTableViewController" customModule="LeagueHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Champions" id="jA3-P4-dcS" userLabel="Champions" customClass="ChampionsTableViewController" customModule="LeagueHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DPw-4w-KcY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,30 +41,34 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeU-pG-XLa">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LeU-pG-XLa">
                                             <rect key="frame" x="16" y="24.5" width="80" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="80" id="MsO-YY-qc3"/>
-                                                <constraint firstAttribute="width" constant="80" id="byq-Ye-Vb1"/>
+                                                <constraint firstAttribute="width" constant="80" id="CUC-ps-7fb"/>
+                                                <constraint firstAttribute="height" constant="80" id="Jho-bR-RVq"/>
+                                                <constraint firstAttribute="width" secondItem="LeU-pG-XLa" secondAttribute="height" multiplier="1:1" id="b9w-9e-cVn"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Champion name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-p9-ahp">
-                                            <rect key="frame" x="104" y="24" width="198" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-p9-ahp">
+                                            <rect key="frame" x="104" y="24" width="140" height="21.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Champion title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-NU-Qgb">
-                                            <rect key="frame" x="104" y="54" width="145" height="51"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Champion title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-NU-Qgb">
+                                            <rect key="frame" x="104" y="44" width="215" height="61"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="LeU-pG-XLa" firstAttribute="centerY" secondItem="Ej6-aY-yaI" secondAttribute="centerY" id="i1O-FZ-2kq"/>
+                                        <constraint firstItem="2Hr-p9-ahp" firstAttribute="leading" secondItem="LeU-pG-XLa" secondAttribute="trailing" constant="8" id="3rj-q9-iA6"/>
+                                        <constraint firstItem="LeU-pG-XLa" firstAttribute="leading" secondItem="Ej6-aY-yaI" secondAttribute="leading" constant="16" id="Jz7-9T-wl0"/>
+                                        <constraint firstItem="2Hr-p9-ahp" firstAttribute="top" secondItem="Ej6-aY-yaI" secondAttribute="top" constant="24" id="Phg-q9-3SR"/>
+                                        <constraint firstItem="fjN-NU-Qgb" firstAttribute="leading" secondItem="LeU-pG-XLa" secondAttribute="trailing" constant="8" id="g24-QR-Cl3"/>
+                                        <constraint firstItem="fjN-NU-Qgb" firstAttribute="top" secondItem="2Hr-p9-ahp" secondAttribute="bottom" constant="-1.5" id="jnm-2g-9sZ"/>
+                                        <constraint firstItem="LeU-pG-XLa" firstAttribute="centerY" secondItem="Ej6-aY-yaI" secondAttribute="centerY" id="tEv-kL-Qxz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -79,7 +83,7 @@
                             <outlet property="delegate" destination="jA3-P4-dcS" id="2Oz-2e-wzS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="N83-Q8-4rt"/>
+                    <tabBarItem key="tabBarItem" title="Data" id="N83-Q8-4rt" userLabel="Champions"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYO-dr-5Gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,7 +92,7 @@
         <!--Profile-->
         <scene sceneID="jZA-bz-D8H">
             <objects>
-                <viewController id="8h7-xT-0Uq" customClass="ProfileViewController" customModule="LeagueHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Profile" id="8h7-xT-0Uq" customClass="ProfileViewController" customModule="LeagueHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oFA-54-U42">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,7 +134,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bob" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
                                         <rect key="frame" x="13" y="36.5" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="LeI-Z2-FXB"/>

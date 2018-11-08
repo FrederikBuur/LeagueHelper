@@ -17,11 +17,11 @@ public enum DataDragonRouter: URLRequestConvertible {
     }
     
     case championList(_ version: String, _ region: String)
-    case version
+    case latestVersion
     
     var method: HTTPMethod {
         switch self {
-        case .championList, .version:
+        case .championList, .latestVersion:
             return .get
         }
     }
@@ -30,7 +30,7 @@ public enum DataDragonRouter: URLRequestConvertible {
         switch self {
         case .championList(let version, let region):
             return "/cdn/\(version)/data/\(region)/champion.json"
-        case .version:
+        case .latestVersion:
             return "/api/versions.json"
         }
     }
