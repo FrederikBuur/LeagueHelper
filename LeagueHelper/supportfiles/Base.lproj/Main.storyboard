@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6u-tY-2p8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="D6u-tY-2p8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,6 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="championCell" rowHeight="82" id="NSD-VC-XDj" customClass="ChampionTableViewCell" customModule="LeagueHelper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="82"/>
@@ -137,7 +138,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZPo-Ac-bMI" firstAttribute="top" secondItem="lVx-CG-kFl" secondAttribute="top" id="3wx-XA-Rol"/>
                             <constraint firstItem="ZPo-Ac-bMI" firstAttribute="leading" secondItem="Rag-Ih-yHt" secondAttribute="leading" constant="-10" id="CtD-4u-YcU"/>
@@ -166,15 +167,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-zI-AuY">
-                                <rect key="frame" x="16" y="323" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e4p-Wu-JpT">
+                                <rect key="frame" x="16" y="36" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="MkF-Fr-jfU"/>
+                                    <constraint firstAttribute="height" constant="80" id="UWd-fe-d74"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerLevel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK8-df-GK5">
+                                <rect key="frame" x="104" y="61.5" width="123.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-zI-AuY">
+                                <rect key="frame" x="104" y="36" width="161" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.086669680891531264" blue="0.01974212316042101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="e4p-Wu-JpT" firstAttribute="leading" secondItem="i7C-25-MlA" secondAttribute="leading" constant="16" id="CKK-SF-j0X"/>
+                            <constraint firstItem="MDv-zI-AuY" firstAttribute="leading" secondItem="e4p-Wu-JpT" secondAttribute="trailing" constant="8" id="F3o-oN-GnI"/>
+                            <constraint firstItem="e4p-Wu-JpT" firstAttribute="top" secondItem="i7C-25-MlA" secondAttribute="top" constant="16" id="G6U-xf-2Qw"/>
+                            <constraint firstItem="ZK8-df-GK5" firstAttribute="top" secondItem="MDv-zI-AuY" secondAttribute="bottom" id="QSd-Bq-weO"/>
+                            <constraint firstItem="MDv-zI-AuY" firstAttribute="top" secondItem="i7C-25-MlA" secondAttribute="top" constant="16" id="Wj6-Ch-koP"/>
+                            <constraint firstItem="ZK8-df-GK5" firstAttribute="leading" secondItem="e4p-Wu-JpT" secondAttribute="trailing" constant="8" id="xX7-be-DhN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i7C-25-MlA"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="iwd-m4-50R"/>
@@ -184,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmq-m1-pnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688.79999999999995" y="-768.66566716641682"/>
+            <point key="canvasLocation" x="688.79999999999995" y="-841.52923538230891"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="QSt-gy-GOU">
@@ -222,7 +243,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FS6-e2-bQ2" firstAttribute="centerX" secondItem="jFS-vL-vOX" secondAttribute="centerX" id="EE0-1R-a8X"/>
                             <constraint firstItem="FS6-e2-bQ2" firstAttribute="centerY" secondItem="jFS-vL-vOX" secondAttribute="centerY" id="af4-uQ-sZ7"/>
@@ -258,11 +279,11 @@
             </objects>
             <point key="canvasLocation" x="-289" y="-106"/>
         </scene>
-        <!--Data-->
+        <!--Champions-->
         <scene sceneID="fbF-nU-JFe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gcv-wm-J3Z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Data" id="N83-Q8-4rt" userLabel="Champions"/>
+                    <tabBarItem key="tabBarItem" title="Champions" id="N83-Q8-4rt" userLabel="Champions"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VJZ-3U-2UT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
