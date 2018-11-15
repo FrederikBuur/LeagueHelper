@@ -34,41 +34,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="championCell" rowHeight="129" id="NSD-VC-XDj" customClass="ChampionTableViewCell" customModule="LeagueHelper" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="129"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="championCell" rowHeight="100" id="NSD-VC-XDj" customClass="ChampionTableViewCell" customModule="LeagueHelper" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NSD-VC-XDj" id="Ej6-aY-yaI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NSD-VC-XDj" id="Ej6-aY-yaI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LeU-pG-XLa">
-                                            <rect key="frame" x="16" y="24.5" width="80" height="80"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LeU-pG-XLa">
+                                            <rect key="frame" x="16" y="25" width="50" height="50"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="80" id="CUC-ps-7fb"/>
-                                                <constraint firstAttribute="height" constant="80" id="Jho-bR-RVq"/>
+                                                <constraint firstAttribute="height" constant="50" id="2ou-SU-0Wd"/>
+                                                <constraint firstAttribute="width" constant="50" id="Sl4-HB-Vlm"/>
                                                 <constraint firstAttribute="width" secondItem="LeU-pG-XLa" secondAttribute="height" multiplier="1:1" id="b9w-9e-cVn"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-p9-ahp">
-                                            <rect key="frame" x="104" y="24" width="140" height="21.5"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Champion title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-NU-Qgb">
-                                            <rect key="frame" x="104" y="44" width="215" height="61"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PVx-Mt-rux">
+                                            <rect key="frame" x="74" y="24" width="200" height="42"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Hr-p9-ahp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Champion title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjN-NU-Qgb">
+                                                    <rect key="frame" x="0.0" y="21.5" width="200" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="eT3-Lm-RL4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="2Hr-p9-ahp" firstAttribute="leading" secondItem="LeU-pG-XLa" secondAttribute="trailing" constant="8" id="3rj-q9-iA6"/>
+                                        <constraint firstItem="PVx-Mt-rux" firstAttribute="leading" secondItem="LeU-pG-XLa" secondAttribute="trailing" constant="8" id="5qY-Sd-JIQ"/>
                                         <constraint firstItem="LeU-pG-XLa" firstAttribute="leading" secondItem="Ej6-aY-yaI" secondAttribute="leading" constant="16" id="Jz7-9T-wl0"/>
-                                        <constraint firstItem="2Hr-p9-ahp" firstAttribute="top" secondItem="Ej6-aY-yaI" secondAttribute="top" constant="24" id="Phg-q9-3SR"/>
-                                        <constraint firstItem="fjN-NU-Qgb" firstAttribute="leading" secondItem="LeU-pG-XLa" secondAttribute="trailing" constant="8" id="g24-QR-Cl3"/>
-                                        <constraint firstItem="fjN-NU-Qgb" firstAttribute="top" secondItem="2Hr-p9-ahp" secondAttribute="bottom" constant="-1.5" id="jnm-2g-9sZ"/>
-                                        <constraint firstItem="LeU-pG-XLa" firstAttribute="centerY" secondItem="Ej6-aY-yaI" secondAttribute="centerY" id="tEv-kL-Qxz"/>
+                                        <constraint firstItem="LeU-pG-XLa" firstAttribute="top" secondItem="Ej6-aY-yaI" secondAttribute="top" constant="25" id="f0o-SB-Lx0"/>
+                                        <constraint firstItem="PVx-Mt-rux" firstAttribute="top" secondItem="Ej6-aY-yaI" secondAttribute="top" constant="24" id="k3I-rk-Nwd"/>
+                                        <constraint firstAttribute="bottom" secondItem="LeU-pG-XLa" secondAttribute="bottom" constant="24.5" id="n3z-Sl-l47"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
