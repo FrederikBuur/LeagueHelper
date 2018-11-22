@@ -19,10 +19,11 @@ public enum LeagueRouter: URLRequestConvertible {
     }
     
     case summonerByName(String)
+    case getLeaguePosition(Int)
     
     var method: HTTPMethod {
         switch self {
-        case .summonerByName:
+        case .summonerByName, .getLeaguePosition:
             return .get
         }
     }
@@ -31,15 +32,15 @@ public enum LeagueRouter: URLRequestConvertible {
         switch self {
         case .summonerByName(let name):
             return "/summoner/v3/summoners/by-name/\(name)"
+        case .getLeaguePosition(let id):
+            return "/league/v3/positions/by-summoner/\(id)"
         }
     }
     
     var parameters: [String: Any] {
         switch self {
-        case .summonerByName:
+        case .summonerByName, .getLeaguePosition:
             return ["api_key": Constants.apiKey]
-        default:
-            return [:]
         }
     }
     

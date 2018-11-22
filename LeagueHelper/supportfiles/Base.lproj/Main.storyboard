@@ -167,31 +167,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-zI-AuY">
+                                <rect key="frame" x="114" y="36" width="161" height="25.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e4p-Wu-JpT">
-                                <rect key="frame" x="16" y="36" width="80" height="80"/>
+                                <rect key="frame" x="16" y="36" width="90" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="MkF-Fr-jfU"/>
-                                    <constraint firstAttribute="height" constant="80" id="UWd-fe-d74"/>
+                                    <constraint firstAttribute="width" constant="90" id="MkF-Fr-jfU"/>
+                                    <constraint firstAttribute="height" constant="90" id="UWd-fe-d74"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerLevel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZK8-df-GK5">
-                                <rect key="frame" x="104" y="61.5" width="123.5" height="21"/>
+                                <rect key="frame" x="114" y="61.5" width="123.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDv-zI-AuY">
-                                <rect key="frame" x="104" y="36" width="161" height="25.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerRank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsK-2i-LU7">
+                                <rect key="frame" x="114" y="82.5" width="121.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerWinRate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-Zg-fqJ">
+                                <rect key="frame" x="114" y="103.5" width="148" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="LbG-Zg-fqJ" firstAttribute="leading" secondItem="e4p-Wu-JpT" secondAttribute="trailing" constant="8" id="0np-Xl-w2h"/>
+                            <constraint firstItem="LbG-Zg-fqJ" firstAttribute="top" secondItem="rsK-2i-LU7" secondAttribute="bottom" id="3P8-fT-ueB"/>
                             <constraint firstItem="e4p-Wu-JpT" firstAttribute="leading" secondItem="i7C-25-MlA" secondAttribute="leading" constant="16" id="CKK-SF-j0X"/>
                             <constraint firstItem="MDv-zI-AuY" firstAttribute="leading" secondItem="e4p-Wu-JpT" secondAttribute="trailing" constant="8" id="F3o-oN-GnI"/>
                             <constraint firstItem="e4p-Wu-JpT" firstAttribute="top" secondItem="i7C-25-MlA" secondAttribute="top" constant="16" id="G6U-xf-2Qw"/>
+                            <constraint firstItem="rsK-2i-LU7" firstAttribute="top" secondItem="ZK8-df-GK5" secondAttribute="bottom" id="JAv-hy-aIt"/>
+                            <constraint firstItem="rsK-2i-LU7" firstAttribute="leading" secondItem="e4p-Wu-JpT" secondAttribute="trailing" constant="8" id="MLp-vv-oJO"/>
                             <constraint firstItem="ZK8-df-GK5" firstAttribute="top" secondItem="MDv-zI-AuY" secondAttribute="bottom" id="QSd-Bq-weO"/>
                             <constraint firstItem="MDv-zI-AuY" firstAttribute="top" secondItem="i7C-25-MlA" secondAttribute="top" constant="16" id="Wj6-Ch-koP"/>
                             <constraint firstItem="ZK8-df-GK5" firstAttribute="leading" secondItem="e4p-Wu-JpT" secondAttribute="trailing" constant="8" id="xX7-be-DhN"/>
@@ -200,7 +216,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="iwd-m4-50R"/>
                     <connections>
-                        <outlet property="label" destination="MDv-zI-AuY" id="YH2-7q-rpE"/>
+                        <outlet property="summonerIconImageView" destination="e4p-Wu-JpT" id="TQp-Ig-GRG"/>
+                        <outlet property="summonerLevelLabel" destination="ZK8-df-GK5" id="6vz-pi-nKp"/>
+                        <outlet property="summonerNameLabel" destination="MDv-zI-AuY" id="Kuq-l8-JFX"/>
+                        <outlet property="summonerRankLabel" destination="rsK-2i-LU7" id="oqE-eM-b8i"/>
+                        <outlet property="summonerWinRatio" destination="LbG-Zg-fqJ" id="5Nd-wC-ckk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmq-m1-pnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,7 +244,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bob" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fluffy Sick" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
                                         <rect key="frame" x="13" y="36.5" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="LeI-Z2-FXB"/>

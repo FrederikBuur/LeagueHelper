@@ -14,7 +14,6 @@ import SDWebImage
 
 class ChampionsTableViewController: UITableViewController, UISearchBarDelegate {
 
-    private var controller = DataDragonController()
     private var champions: [Champion] = []
     private var searchChampions: [Champion] = []
     private var isSearching = false
@@ -27,7 +26,6 @@ class ChampionsTableViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         createSearchBar()
-        fetchNewestVersion()
         version = RealmController.sharedInstance.getVersion()?.version
         champions = RealmController.sharedInstance.getChampions().map{$0}
         searchChampions = champions
@@ -41,54 +39,6 @@ class ChampionsTableViewController: UITableViewController, UISearchBarDelegate {
         searchBar.delegate = self
         searchBar.resignFirstResponder()
         self.navigationItem.titleView = searchBar
-    }
-    
-    private func fetchNewestVersion() {
-        controller.getLatestVersion()
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (latestVersion) in
-                    if let version = RealmController.sharedInstance.getVersion()?.version {
-                        if version.compare( latestVersion.version, options: .numeric) == .orderedAscending {
-                            // newer version exist udpate champions
-                            print("newer version exist, fetch new champions")
-                            self.version = version
-                            self.fetchChampions(version: version)
-                        } else {
-                            // champions are already up to date
-                            print("champions already up to date")
-                        }
-                    } else {
-                        self.version = latestVersion.version
-                        self.fetchChampions(version: latestVersion.version)
-                        print("no version in realm, fetch newest champions")
-                    }
-            }, onError: { (error) in
-                
-            }).disposed(by: disposeBag)
-    }
-    
-    private func fetchChampions(version: String) {
-        controller.getChampions(version: version, in: "en_US")
-            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .observeOn(MainScheduler.instance)
-            .subscribe(
-                onNext: { (championsResponse) in
-                    
-                    self.champions = championsResponse.data
-                    self.searchChampions = self.champions
-                    self.tableView.reloadData()
-                    print("fetched newest champions, reload")
-                    
-                    print(championsResponse.version)
-            }, onError: { (error) in
-                if let v = error as? AFError {
-                    if v.responseCode == 404 {
-                        
-                    }
-                }
-            }).disposed(by: disposeBag)
     }
 
     // MARK: - Table view data source

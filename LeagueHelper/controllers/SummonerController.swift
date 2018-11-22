@@ -19,11 +19,9 @@ class SummonerController {
                 switch response.result {
                 case .success(let value):
                     let summoner = Summoner.parsJSON(json: JSON(value))
-                    print(summoner)
                     emitter.onNext(summoner)
                     emitter.onCompleted()
                 case .failure(let error):
-                    print(error)
                     emitter.onError(error)
                     emitter.onCompleted()
                 }
@@ -34,4 +32,24 @@ class SummonerController {
             }
         })
     }
+    
+    func getLeaguePosition(id: Int) -> Observable<Array<LeaguePosition>> {
+        return Observable.create({ (emitter) -> Disposable in
+            let request = Alamofire.request(LeagueRouter.getLeaguePosition(id)).validate().responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    let leaguePositions = LeaguePosition.parsJSON(json: JSON(value))
+                    emitter.onNext(leaguePositions)
+                    emitter.onCompleted()
+                case .failure(let error):
+                    emitter.onError(error)
+                    emitter.onCompleted()
+                }
+            }
+            return Disposables.create {
+                request.cancel()
+            }
+        })
+    }
+    
 }

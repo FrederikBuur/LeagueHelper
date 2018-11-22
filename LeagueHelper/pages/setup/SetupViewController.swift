@@ -12,6 +12,7 @@ import Alamofire
 
 class SetupViewController: UIViewController {
     
+    private var ddController = DataDragonController()
     private var summonerController: SummonerController?
     private let disposeBag = DisposeBag()
     private var summoner: Summoner? = nil
@@ -40,6 +41,48 @@ class SetupViewController: UIViewController {
         }
     }
     
+    private func fetchNewestVersion() {
+        ddController.getLatestVersion()
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (latestVersion) in
+                    if let version = RealmController.sharedInstance.getVersion()?.version {
+                        if version.compare( latestVersion.version, options: .numeric) == .orderedAscending {
+                            // newer version exist udpate champions
+                            print("newer version exist, fetch new champions")
+                            self.fetchChampions(version: version)
+                        } else {
+                            // champions are already up to date
+                            print("champions already up to date")
+                            // prepare for segue
+                            self.performSegue(withIdentifier: "showProfile", sender: nil)
+                        }
+                    } else {
+                        print("no version in realm, fetch newest champions")
+                        self.fetchChampions(version: latestVersion.version)
+                    }
+            }, onError: { (error) in
+            }).disposed(by: disposeBag)
+    }
+    
+    private func fetchChampions(version: String) {
+        ddController.getChampions(version: version, in: "en_US")
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { (championsResponse) in
+                    print("fetched newest champions, reload")
+                    // prepare for segue
+                    self.performSegue(withIdentifier: "showProfile", sender: nil)
+            }, onError: { (error) in
+                if let v = error as? AFError {
+                    if v.responseCode == 404 {
+                    }
+                }
+            }).disposed(by: disposeBag)
+    }
+    
     private func fetchSummoner(named summonerName: String) {
         summonerController?.getSummoner(named: summonerName)
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
@@ -48,8 +91,7 @@ class SetupViewController: UIViewController {
                 onNext: { (summoner) in
                     // save summoner
                     self.summoner = summoner
-                    // prepare for segue
-                    self.performSegue(withIdentifier: "showProfile", sender: nil)
+                    self.fetchNewestVersion()
             }, onError: { (error) in
                 if let v = error as? AFError {
                     if v.responseCode == 404 {

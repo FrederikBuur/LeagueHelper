@@ -37,7 +37,11 @@ class RealmController {
     
     func getVersion() -> Version? {
         let result = realm.objects(Version.self).first
-        return result
+        if result?.version == "" {
+            return nil
+        } else {
+            return result
+        }
     }
     
 }
