@@ -53,17 +53,19 @@ class SetupViewController: UIViewController {
                     if let version = RealmController.sharedInstance.getVersion()?.version {
                         if version.compare( latestVersion.version, options: .numeric) == .orderedAscending {
                             // newer version exist udpate champions
-                            print("newer version exist, fetch new champions")
-                            self.fetchChampions(version: version)
+                            print("newer version exist, fetch new static data")
+                            RealmController.sharedInstance.saveVersionOrUpdate(version: latestVersion)
+                            self.fetchStaticData(version: latestVersion.version)
                         } else {
                             // champions are already up to date
-                            print("champions already up to date")
+                            print("static data already up to date")
                             // prepare for segue
                             self.performSegue(withIdentifier: "showProfile", sender: nil)
                         }
                     } else {
-                        print("no version in realm, fetch newest champions")
-                        self.fetchChampions(version: latestVersion.version)
+                        print("no version in realm, fetch newest datic data")
+                        RealmController.sharedInstance.saveVersionOrUpdate(version: latestVersion)
+                        self.fetchStaticData(version: latestVersion.version)
                     }
             }, onError: { (error) in
                 self.searchButton.isEnabled = true
@@ -71,13 +73,15 @@ class SetupViewController: UIViewController {
             }).disposed(by: disposeBag)
     }
     
-    private func fetchChampions(version: String) {
-        ddController.getChampions(version: version, in: "en_US")
+    private func fetchStaticData(version: String) {
+        
+        Observable.zip(ddController.getChampions(version: version, in: "en_US"),
+                       ddController.getSummonerSpells(version: version, region: "en_US"))
             .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: { (championsResponse) in
-                    print("fetched newest champions, reload")
+                onNext: { (results) in
+                    print("fetched newest static data")
                     // prepare for segue
                     self.performSegue(withIdentifier: "showProfile", sender: nil)
             }, onError: { (error) in

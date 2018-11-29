@@ -11,11 +11,15 @@ import SwiftyJSON
 import RealmSwift
 
 class Champion: Object {
-    @objc dynamic var id: String = "id"
+    @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var key: Int = -1
     @objc dynamic var name: String = "name"
     @objc dynamic var title: String = "title"
     @objc dynamic var image: Image? = Image()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
     static func parseChampionArray(json: JSON) -> [Champion] {
         var champions: [Champion] = []

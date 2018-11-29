@@ -36,6 +36,26 @@ class DataDragonController {
         })
     }
     
+    func getSummonerSpells(version: String, region: String) -> Observable<SummonerSpellResponse> {
+        return Observable.create({ (emitter) -> Disposable in
+            let request = Alamofire.request(DataDragonRouter.summonerSpells(version, region)).validate().responseJSON { (response) in
+                switch response.result {
+                case .success(let value):
+                    let summonerSpellResponse = SummonerSpellResponse.parseJson(json: JSON(value))
+                    RealmController.sharedInstance.saveSummonerSpellsOrUpdate(summonerSpellResponse: summonerSpellResponse)
+                    emitter.onNext(summonerSpellResponse)
+                    emitter.onCompleted()
+                case .failure(let error):
+                    emitter.onError(error)
+                    emitter.onCompleted()
+                }
+            }
+            return Disposables.create {
+                request.cancel()
+            }
+        })
+    }
+    
     func getChampions(version: String, in region: String) -> Observable<ChampionsResponse> {
         return Observable.create({ (emitter) -> Disposable in
             

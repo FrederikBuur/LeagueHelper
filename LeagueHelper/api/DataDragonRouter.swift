@@ -17,22 +17,29 @@ public enum DataDragonRouter: URLRequestConvertible {
     }
     
     static func getChampionImagePath(version: String, imgName: String) -> String {
-        return "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/champion/\(imgName)"
+        let url = "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/champion/\(imgName)"
+        //print(url)
+        return url
     }
     static func getSummonerSpellImagePath(version: String, imgName: String) -> String {
-        return "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/spell/\(imgName)"
+        let url = "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/spell/\(imgName)"
+        print(url)
+        return url
     }
     static func getSummonerIconImagePath(version: String, imgName: Int) -> String {
-        return "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/profileicon/\(imgName).png"
+        let url = "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/profileicon/\(imgName).png"
+        print(url)
+        return url
     }
    
     
     case championList(_ version: String, _ region: String)
+    case summonerSpells(String, String)
     case latestVersion
     
     var method: HTTPMethod {
         switch self {
-        case .championList, .latestVersion:
+        case .championList, .latestVersion, .summonerSpells:
             return .get
         }
     }
@@ -41,6 +48,8 @@ public enum DataDragonRouter: URLRequestConvertible {
         switch self {
         case .championList(let version, let region):
             return "/cdn/\(version)/data/\(region)/champion.json"
+        case .summonerSpells(let version, let region):
+            return "/cdn/\(version)/data/\(region)/summoner.json"
         case .latestVersion:
             return "/api/versions.json"
         }
@@ -59,6 +68,8 @@ public enum DataDragonRouter: URLRequestConvertible {
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(10 * 1000)
+        
+        print("\(try request.asURLRequest().description)")
         
         return try URLEncoding.default.encode(request, with: parameters)
     }

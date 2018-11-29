@@ -22,11 +22,23 @@ class RealmController {
     func saveChampionsOrUpdate(championResponse: ChampionsResponse) {
         try! realm.write {
             for champion in championResponse.data {
-                realm.add(champion)
+                realm.add(champion, update: true)
             }
-            let version = Version()
-            version.version = championResponse.version
-            realm.add(version)
+        }
+    }
+    
+    func saveSummonerSpellsOrUpdate(summonerSpellResponse: SummonerSpellResponse) {
+        try! realm.write {
+            for summonerSpell in summonerSpellResponse.data {
+                realm.add(summonerSpell, update: true)
+            }
+        }
+    }
+    
+    func saveVersionOrUpdate(version: Version) {
+        try! realm.write {
+            //version.version = "8.11.1"
+            realm.add(version, update: true)
         }
     }
     
@@ -37,6 +49,11 @@ class RealmController {
     
     func getChampionById(id: Int) -> Champion? {
         let result = realm.objects(Champion.self).filter("key = \(id)").first
+        return result
+    }
+    
+    func getSummonerSpellById(id: Int) -> SummonerSpell? {
+        let result = realm.objects(SummonerSpell.self).filter("key = \(id)").first
         return result
     }
     

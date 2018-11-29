@@ -11,14 +11,19 @@ import SwiftyJSON
 import RealmSwift
 
 class Version: Object {
-    @objc dynamic var version = ""
+    @objc dynamic var id = 1
+    @objc dynamic var version = "version"
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
     static func getLatestVersion(json: JSON) -> Version {
         let version = Version()
         if let latestVersion = json.arrayValue.first?.stringValue {
             version.version = latestVersion
         } else {
-            version.version = "8.17.1"
+            version.version = "8.17.2"
         }
         return version
     }

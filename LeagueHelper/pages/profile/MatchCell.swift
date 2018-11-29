@@ -16,7 +16,7 @@ class MatchCell: UITableViewCell {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    private var participant: Participant? = nil
+    //private var participant: Participant? = nil
     
     func setupCell(match: Match, version: String?, summonerId: CLong?) {
         if let v = version, let id = summonerId {
@@ -48,6 +48,14 @@ class MatchCell: UITableViewCell {
         }
         
         // setting summonerspell images
+        let summonerSpell1 = RealmController.sharedInstance.getSummonerSpellById(id: participant.spell1Id)
+        let summonerSpell2 = RealmController.sharedInstance.getSummonerSpellById(id: participant.spell2Id)
+        if let ss1 = summonerSpell1?.image?.full, let ss2 = summonerSpell2?.image?.full {
+            let url1 = DataDragonRouter.getSummonerSpellImagePath(version: version, imgName: ss1)
+            let url2 = DataDragonRouter.getSummonerSpellImagePath(version: version, imgName: ss2)
+            self.summonerSpell1Image.sd_setImage(with: URL(string: url1))
+            self.summonerSpell2Image.sd_setImage(with: URL(string: url2))
+        }
         
     }
     
