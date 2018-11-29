@@ -29,7 +29,7 @@ class ChampionTableViewCell: UITableViewCell {
         self.championName.text = champion.name
         self.championTitle.text = champion.title
         if let image = champion.image?.full, let version = version {
-            let url = "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/champion/\(image)"
+            let url = DataDragonRouter.getChampionImagePath(version: version, imgName: image)
             self.championImage.sd_setImage(with: URL(string: url))
             self.championImage.layer.cornerRadius = self.championImage.frame.width / 2
             self.championImage.layer.borderWidth = 1.0

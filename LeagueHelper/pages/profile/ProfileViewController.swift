@@ -16,28 +16,58 @@ class ProfileViewController: UIViewController {
     private let summonerController = SummonerController()
     private let disposeBag = DisposeBag()
     private var leaguePosition: LeaguePosition? = nil
-    var mSummoner: Summoner?
+    private var version: String? = nil
+    private var matches: [Match] = []
     
+    var mSummoner: Summoner?
 
     @IBOutlet weak var summonerIconImageView: UIImageView!
     @IBOutlet weak var summonerNameLabel: UILabel!
     @IBOutlet weak var summonerLevelLabel: UILabel!
     @IBOutlet weak var summonerRankLabel: UILabel!
     @IBOutlet weak var summonerWinRatio: UILabel!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // setup tableview
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         // Setup summoner info
         if let sum = mSummoner, let version = RealmController.sharedInstance.getVersion()?.version {
+            self.version = version
             summonerNameLabel.text = "\(sum.name)"
             summonerLevelLabel.text = "Level: \(sum.summonerLevel)"
-            let summonerIconUrl = "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/profileicon/\(sum.profileIconId).png"
-            print(version)
+            let summonerIconUrl = DataDragonRouter.getSummonerIconImagePath(version: version, imgName: sum.profileIconId)
             print(summonerIconUrl)
             summonerIconImageView.sd_setImage(with: URL(string: summonerIconUrl))
             fetchLeaguePosition(id: sum.id)
+            fetchMatches(summonerId: sum.accountId)
         }
+    }
+    
+    private func fetchMatches(summonerId: Int) {
+        summonerController.getLatestMatches(id: summonerId, beginIndex: 0, endIndex: 20)
+            .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .observeOn(MainScheduler.instance)
+            .concatMap { (matchList) in
+                return Observable.from(matchList.matches)
+                    .subscribeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+                    .observeOn(MainScheduler.instance)
+                    .concatMap { (matchReference) in
+                        return self.summonerController.getMatch(id: matchReference.gameId)
+                    }
+                    .do(onNext: { (match) in
+                        self.matches.append(match)
+                    }, onError: { (error) in
+                    }, onCompleted: {
+                        self.tableView.reloadData()
+                    })
+            }
+            .subscribe()
+            .disposed(by: disposeBag)
     }
     
     private func fetchLeaguePosition(id: Int) {
@@ -78,4 +108,22 @@ class ProfileViewController: UIViewController {
     }
     */
 
+}
+
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return matches.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "matchCell") as! MatchCell
+        
+        let match = self.matches[indexPath.row]
+        cell.setupCell(match: match, version: self.version, summonerId: self.mSummoner?.id)
+        
+        
+        return cell
+    }
+    
 }

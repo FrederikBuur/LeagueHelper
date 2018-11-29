@@ -19,10 +19,15 @@ public enum LeagueRouter: URLRequestConvertible {
     
     case summonerByName(String)
     case getLeaguePosition(Int)
+    case getMatchesByAccount(Int, Int, Int)
+    case getMatch(Int)
     
     var method: HTTPMethod {
         switch self {
-        case .summonerByName, .getLeaguePosition:
+        case .summonerByName,
+             .getLeaguePosition,
+             .getMatchesByAccount,
+             .getMatch:
             return .get
         }
     }
@@ -33,13 +38,23 @@ public enum LeagueRouter: URLRequestConvertible {
             return "/summoner/v3/summoners/by-name/\(name)"
         case .getLeaguePosition(let id):
             return "/league/v3/positions/by-summoner/\(id)"
+        case .getMatchesByAccount(let id, _, _):
+            return "/match/v3/matchlists/by-account/\(id)"
+        case .getMatch(let id):
+            return "/match/v3/matches/\(id)"
         }
     }
     
     var parameters: [String: Any] {
         switch self {
-        case .summonerByName, .getLeaguePosition:
+        case .summonerByName,
+             .getLeaguePosition,
+             .getMatch:
             return ["api_key": Constants.apiKey]
+        case .getMatchesByAccount(_, let beginIndex, let endIndex):
+            return ["api_key": Constants.apiKey,
+                    "beginIndex": beginIndex,
+                    "endIndex": endIndex]
         }
     }
     
@@ -49,6 +64,8 @@ public enum LeagueRouter: URLRequestConvertible {
         var request = URLRequest(url: url.appendingPathComponent(path))
         request.httpMethod = method.rawValue
         request.timeoutInterval = TimeInterval(10 * 1000)
+        
+        print("\(try request.asURLRequest().description)")
         
         return try URLEncoding.default.encode(request, with: parameters)
     }

@@ -35,6 +35,11 @@ class RealmController {
         return result
     }
     
+    func getChampionById(id: Int) -> Champion? {
+        let result = realm.objects(Champion.self).filter("key = \(id)").first
+        return result
+    }
+    
     func getVersion() -> Version? {
         let result = realm.objects(Version.self).first
         if result?.version == "" {
