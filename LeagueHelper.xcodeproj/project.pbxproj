@@ -27,6 +27,7 @@
 		DDB721732181EF2A003B4341 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB721722181EF2A003B4341 /* ProfileViewController.swift */; };
 		DDB721762181EFE5003B4341 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB721752181EFE5003B4341 /* SetupViewController.swift */; };
 		DDB721782181FB72003B4341 /* SummonerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB721772181FB72003B4341 /* SummonerController.swift */; };
+		DDCE1BEB21AFE44900DFD58D /* MatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDCE1BEA21AFE44900DFD58D /* MatchCell.swift */; };
 		DDE8EE7521A6B5A00051EF79 /* LeaguePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE8EE7421A6B5A00051EF79 /* LeaguePosition.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		DDB721722181EF2A003B4341 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DDB721752181EFE5003B4341 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		DDB721772181FB72003B4341 /* SummonerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerController.swift; sourceTree = "<group>"; };
+		DDCE1BEA21AFE44900DFD58D /* MatchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCell.swift; sourceTree = "<group>"; };
 		DDE8EE7421A6B5A00051EF79 /* LeaguePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaguePosition.swift; sourceTree = "<group>"; };
 		FF9E8414E42034CF903875DF /* Pods-LeagueHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				DDB721722181EF2A003B4341 /* ProfileViewController.swift */,
+				DDCE1BEA21AFE44900DFD58D /* MatchCell.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				DD7FB698218F9F1800F6E83D /* ChampionsTableViewController.swift in Sources */,
 				DD7080A721946A0600BDAAE6 /* RealmController.swift in Sources */,
 				DDB721762181EFE5003B4341 /* SetupViewController.swift in Sources */,
+				DDCE1BEB21AFE44900DFD58D /* MatchCell.swift in Sources */,
 				DD7FB6A3218FA73300F6E83D /* DataDragonController.swift in Sources */,
 				DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */,
 				DDE8EE7521A6B5A00051EF79 /* LeaguePosition.swift in Sources */,

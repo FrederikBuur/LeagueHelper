@@ -57,14 +57,7 @@ class ChampionsTableViewController: UITableViewController, UISearchBarDelegate {
 
         // Configure the cell
         let champion = searchChampions[indexPath.row]
-        
-        cell.championName.text = champion.name
-        cell.championTitle.text = champion.title
-        if let image = champion.image?.full, let version = self.version {
-            let url = "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/champion/\(image)"
-            cell.championImage.sd_setImage(with: URL(string: url))
-        }
-        
+        cell.setupCell(champion: champion, version: self.version)
         return cell
     }
 

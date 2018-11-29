@@ -19,10 +19,11 @@ class SetupViewController: UIViewController {
     
     @IBOutlet weak var summonerNameTextField: UITextField!
     @IBOutlet weak var setupLabel: UILabel!
+    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if summonerController == nil {
             summonerController = SummonerController()
         }
@@ -33,6 +34,8 @@ class SetupViewController: UIViewController {
         if let summonerName = summonerNameTextField.text {
             if !summonerName.isEmpty {
                 if isSummonerNameValid(name: summonerName) {
+                    searchButton.isEnabled = false
+                    activityIndicator.startAnimating()
                     fetchSummoner(named: summonerName)
                 } else {
                     setupLabel.text = "Invalid summoner name"
@@ -63,6 +66,8 @@ class SetupViewController: UIViewController {
                         self.fetchChampions(version: latestVersion.version)
                     }
             }, onError: { (error) in
+                self.searchButton.isEnabled = true
+                self.activityIndicator.stopAnimating()
             }).disposed(by: disposeBag)
     }
     
@@ -80,6 +85,8 @@ class SetupViewController: UIViewController {
                     if v.responseCode == 404 {
                     }
                 }
+                self.searchButton.isEnabled = true
+                self.activityIndicator.stopAnimating()
             }).disposed(by: disposeBag)
     }
     
@@ -98,6 +105,8 @@ class SetupViewController: UIViewController {
                         self.setupLabel.text = "Summoner doesn't exist"
                         self.summonerNameTextField.text = ""
                     }
+                    self.searchButton.isEnabled = true
+                    self.activityIndicator.stopAnimating()
                 }
             }).disposed(by: disposeBag)
     }

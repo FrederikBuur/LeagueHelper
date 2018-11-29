@@ -24,5 +24,18 @@ class ChampionTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setupCell(champion: Champion, version: String?) {
+        self.championName.text = champion.name
+        self.championTitle.text = champion.title
+        if let image = champion.image?.full, let version = version {
+            let url = "\(DataDragonRouter.Constants.baseUrl)/cdn/\(version)/img/champion/\(image)"
+            self.championImage.sd_setImage(with: URL(string: url))
+            self.championImage.layer.cornerRadius = self.championImage.frame.width / 2
+            self.championImage.layer.borderWidth = 1.0
+            self.championImage.layer.borderColor = UIColor.black.cgColor
+            self.championImage.clipsToBounds = true
+        }
+    }
 
 }
