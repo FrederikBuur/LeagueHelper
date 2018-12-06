@@ -25,4 +25,17 @@ struct Summoner: Decodable {
             profileIconId: json["profileIconId"].intValue)
     }
     
+    static func isSummonerNameValid(name: String) -> Bool {
+        if name.count <= 2 {return false}
+        let regex = try! NSRegularExpression(pattern: "^[0-9\\p{L} _.]+$")
+        let match = regex.numberOfMatches(in: name,
+                                          options: [],
+                                          range: NSRange(location: 0, length: name.count))
+        if match > 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
 }

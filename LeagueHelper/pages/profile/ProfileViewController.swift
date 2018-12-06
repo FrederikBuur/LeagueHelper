@@ -61,6 +61,7 @@ class ProfileViewController: UIViewController {
                     }
                     .do(onNext: { (match) in
                         self.matches.append(match)
+                        self.tableView.reloadData()
                     }, onError: { (error) in
                     }, onCompleted: {
                         self.tableView.reloadData()

@@ -14,7 +14,7 @@ public enum LeagueRouter: URLRequestConvertible {
     // constants
     enum Constants {
         static let baseUrl = "https://euw1.api.riotgames.com/lol"
-        static let apiKey = "RGAPI-9c058e6c-5430-4bea-9df1-89c1bb123765"
+        static let apiKey = "RGAPI-99b5f07a-332e-43c3-8cb3-1d867036cfe4"
     }
     
     case summonerByName(String)

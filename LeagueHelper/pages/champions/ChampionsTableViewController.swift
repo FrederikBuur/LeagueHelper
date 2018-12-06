@@ -78,7 +78,7 @@ class ChampionsTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchChampions = champions.filter({ $0.name.prefix(searchText.count) == searchText })
+        searchChampions = Champion.filterChampions(champions: self.champions, searchText: searchText)
         self.tableView.reloadData()
     }
     

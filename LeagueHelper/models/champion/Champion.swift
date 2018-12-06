@@ -39,5 +39,10 @@ class Champion: Object {
             champion.image = Image.parseJson(json: json["image"])
         return champion
     }
+    
+    static func filterChampions(champions: [Champion], searchText: String) -> [Champion] {
+        return champions.filter({ $0.name.prefix(searchText.count) == searchText })
+    }
+    
 }
 

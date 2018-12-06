@@ -33,7 +33,7 @@ class SetupViewController: UIViewController {
     @IBAction func searchSummoner(_ sender: Any) {
         if let summonerName = summonerNameTextField.text {
             if !summonerName.isEmpty {
-                if isSummonerNameValid(name: summonerName) {
+                if Summoner.isSummonerNameValid(name: summonerName) {
                     searchButton.isEnabled = false
                     activityIndicator.startAnimating()
                     fetchSummoner(named: summonerName)
@@ -114,20 +114,6 @@ class SetupViewController: UIViewController {
                 }
             }).disposed(by: disposeBag)
     }
-    
-    private func isSummonerNameValid(name: String) -> Bool {
-        if name.count <= 2 {return false}
-        let regex = try! NSRegularExpression(pattern: "^[0-9\\p{L} _.]+$")
-        let match = regex.numberOfMatches(in: name,
-                                          options: [],
-                                          range: NSRange(location: 0, length: name.count))
-        if match > 0 {
-            return true
-        } else {
-            return false
-        }
-    }
-    
     
      // MARK: - Navigation
      

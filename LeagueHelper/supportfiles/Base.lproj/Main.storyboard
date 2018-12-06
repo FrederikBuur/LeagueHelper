@@ -330,7 +330,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fluffy Sick" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fluffy Dúck" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
                                         <rect key="frame" x="13" y="36.5" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="LeI-Z2-FXB"/>

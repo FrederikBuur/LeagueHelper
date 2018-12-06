@@ -20,6 +20,8 @@
 		DD7FB69F218FA26100F6E83D /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB69E218FA26100F6E83D /* Image.swift */; };
 		DD7FB6A1218FA30100F6E83D /* ChampionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB6A0218FA30100F6E83D /* ChampionTableViewCell.swift */; };
 		DD7FB6A3218FA73300F6E83D /* DataDragonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7FB6A2218FA73300F6E83D /* DataDragonController.swift */; };
+		DD98A1F121B948BC00E71990 /* SummonerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98A1F021B948BC00E71990 /* SummonerTests.swift */; };
+		DD98A1F321B94C7400E71990 /* ChampionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD98A1F221B94C7400E71990 /* ChampionTests.swift */; };
 		DDB7215B2181C0A2003B4341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB7215A2181C0A2003B4341 /* AppDelegate.swift */; };
 		DDB721602181C0A2003B4341 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB7215E2181C0A2003B4341 /* Main.storyboard */; };
 		DDB721622181C0A3003B4341 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDB721612181C0A3003B4341 /* Assets.xcassets */; };
@@ -41,6 +43,16 @@
 		DDE8EE7521A6B5A00051EF79 /* LeaguePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE8EE7421A6B5A00051EF79 /* LeaguePosition.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DD98A1E921B944BD00E71990 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDB7214F2181C0A2003B4341 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDB721562181C0A2003B4341;
+			remoteInfo = LeagueHelper;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		40D9D4341FC393A605D89EC3 /* Pods_LeagueHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeagueHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10A2DA13DA90E31BC731376 /* Pods-LeagueHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeagueHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-LeagueHelper/Pods-LeagueHelper.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +68,10 @@
 		DD7FB69E218FA26100F6E83D /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		DD7FB6A0218FA30100F6E83D /* ChampionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionTableViewCell.swift; sourceTree = "<group>"; };
 		DD7FB6A2218FA73300F6E83D /* DataDragonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDragonController.swift; sourceTree = "<group>"; };
+		DD98A1E421B944BD00E71990 /* LeagueHelperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeagueHelperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD98A1E821B944BD00E71990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD98A1F021B948BC00E71990 /* SummonerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerTests.swift; sourceTree = "<group>"; };
+		DD98A1F221B94C7400E71990 /* ChampionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampionTests.swift; sourceTree = "<group>"; };
 		DDB721572181C0A2003B4341 /* LeagueHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDB7215A2181C0A2003B4341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDB7215F2181C0A2003B4341 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +97,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DD98A1E121B944BD00E71990 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDB721542181C0A2003B4341 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,10 +151,21 @@
 			path = champion;
 			sourceTree = "<group>";
 		};
+		DD98A1E521B944BD00E71990 /* LeagueHelperTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD98A1E821B944BD00E71990 /* Info.plist */,
+				DD98A1F021B948BC00E71990 /* SummonerTests.swift */,
+				DD98A1F221B94C7400E71990 /* ChampionTests.swift */,
+			);
+			path = LeagueHelperTests;
+			sourceTree = "<group>";
+		};
 		DDB7214E2181C0A2003B4341 = {
 			isa = PBXGroup;
 			children = (
 				DDB721592181C0A2003B4341 /* LeagueHelper */,
+				DD98A1E521B944BD00E71990 /* LeagueHelperTests */,
 				DDB721582181C0A2003B4341 /* Products */,
 				9AC252FC25948BCA353E4B4C /* Pods */,
 				1865E494BC1FC7741FCDBB22 /* Frameworks */,
@@ -142,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				DDB721572181C0A2003B4341 /* LeagueHelper.app */,
+				DD98A1E421B944BD00E71990 /* LeagueHelperTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,11 +184,11 @@
 		DDB721592181C0A2003B4341 /* LeagueHelper */ = {
 			isa = PBXGroup;
 			children = (
-				DDB721702181EA44003B4341 /* controllers */,
-				DDB7216F2181EA1D003B4341 /* pages */,
-				DDB7216E2181EA15003B4341 /* models */,
-				DDB7216D2181E9DC003B4341 /* supportfiles */,
 				DDB7216C2181E9C9003B4341 /* api */,
+				DDB721702181EA44003B4341 /* controllers */,
+				DDB7216E2181EA15003B4341 /* models */,
+				DDB7216F2181EA1D003B4341 /* pages */,
+				DDB7216D2181E9DC003B4341 /* supportfiles */,
 			);
 			path = LeagueHelper;
 			sourceTree = "<group>";
@@ -257,6 +292,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DD98A1E321B944BD00E71990 /* LeagueHelperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD98A1ED21B944BD00E71990 /* Build configuration list for PBXNativeTarget "LeagueHelperTests" */;
+			buildPhases = (
+				DD98A1E021B944BD00E71990 /* Sources */,
+				DD98A1E121B944BD00E71990 /* Frameworks */,
+				DD98A1E221B944BD00E71990 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD98A1EA21B944BD00E71990 /* PBXTargetDependency */,
+			);
+			name = LeagueHelperTests;
+			productName = LeagueHelperTests;
+			productReference = DD98A1E421B944BD00E71990 /* LeagueHelperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DDB721562181C0A2003B4341 /* LeagueHelper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDB721692181C0A3003B4341 /* Build configuration list for PBXNativeTarget "LeagueHelper" */;
@@ -282,10 +335,15 @@
 		DDB7214F2181C0A2003B4341 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Frederik Buur";
 				TargetAttributes = {
+					DD98A1E321B944BD00E71990 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						TestTargetID = DDB721562181C0A2003B4341;
+					};
 					DDB721562181C0A2003B4341 = {
 						CreatedOnToolsVersion = 10.0;
 					};
@@ -305,11 +363,19 @@
 			projectRoot = "";
 			targets = (
 				DDB721562181C0A2003B4341 /* LeagueHelper */,
+				DD98A1E321B944BD00E71990 /* LeagueHelperTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DD98A1E221B944BD00E71990 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDB721552181C0A2003B4341 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -388,6 +454,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DD98A1E021B944BD00E71990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD98A1F321B94C7400E71990 /* ChampionTests.swift in Sources */,
+				DD98A1F121B948BC00E71990 /* SummonerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DDB721532181C0A2003B4341 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,6 +500,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DD98A1EA21B944BD00E71990 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDB721562181C0A2003B4341 /* LeagueHelper */;
+			targetProxy = DD98A1E921B944BD00E71990 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DDB7215E2181C0A2003B4341 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -445,6 +528,49 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DD98A1EB21B944BD00E71990 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeagueHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fredbuur.LeagueHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeagueHelper.app/LeagueHelper";
+			};
+			name = Debug;
+		};
+		DD98A1EC21B944BD00E71990 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LeagueHelperTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fredbuur.LeagueHelperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeagueHelper.app/LeagueHelper";
+			};
+			name = Release;
+		};
 		DDB721672181C0A3003B4341 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -600,6 +726,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DD98A1ED21B944BD00E71990 /* Build configuration list for PBXNativeTarget "LeagueHelperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD98A1EB21B944BD00E71990 /* Debug */,
+				DD98A1EC21B944BD00E71990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DDB721522181C0A2003B4341 /* Build configuration list for PBXProject "LeagueHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
