@@ -49,10 +49,9 @@ class LeagueHelperUITests: XCTestCase {
         app.buttons["Search"].tap()
         
         let element = app.staticTexts[name]
-        let didAppear = element.waitForExistence(timeout: 5)
+        let didAppear = element.waitForExistence(timeout: 10)
         XCTAssert(didAppear)
-        
-        
+    
     }
         
 }

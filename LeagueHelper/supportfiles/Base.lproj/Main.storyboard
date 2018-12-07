@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="622"/>
+            <point key="canvasLocation" x="543" y="308"/>
         </scene>
         <!--Champions-->
         <scene sceneID="WjD-Q1-WzR">
@@ -100,7 +100,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYO-dr-5Gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="-106.59670164917542"/>
+            <point key="canvasLocation" x="2169" y="-107"/>
         </scene>
         <!--Champion View Controller-->
         <scene sceneID="cUV-rW-kwa">
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xT6-gR-lv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2628" y="-107.49625187406298"/>
+            <point key="canvasLocation" x="2983" y="-107"/>
         </scene>
         <!--Profile-->
         <scene sceneID="jZA-bz-D8H">
@@ -187,14 +187,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerRank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsK-2i-LU7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsK-2i-LU7">
                                 <rect key="frame" x="114" y="82.5" width="121.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JOw-l9-S7y"/>
+                                    <constraint firstAttribute="width" constant="121.5" id="b0x-ed-EST"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummonerWinRate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-Zg-fqJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-Zg-fqJ">
                                 <rect key="frame" x="114" y="103.5" width="148" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="24J-cH-tFh"/>
+                                    <constraint firstAttribute="height" constant="21" id="mDI-pi-ZA9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -311,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmq-m1-pnz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688.79999999999995" y="-841.52923538230891"/>
+            <point key="canvasLocation" x="543" y="-484"/>
         </scene>
         <!--Setup View Controller-->
         <scene sceneID="QSt-gy-GOU">
@@ -322,7 +330,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="FS6-e2-bQ2">
-                                <rect key="frame" x="74.5" y="287.5" width="226" height="112.5"/>
+                                <rect key="frame" x="74.5" y="200" width="226" height="112.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in your summoner name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqt-0A-uLI">
                                         <rect key="frame" x="0.0" y="0.0" width="226" height="20.5"/>
@@ -333,7 +341,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summoner name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czG-De-51B">
                                         <rect key="frame" x="13" y="36.5" width="200" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="LeI-Z2-FXB"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="LeI-Z2-FXB"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -349,14 +357,14 @@
                                 </subviews>
                             </stackView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XYu-LJ-754">
-                                <rect key="frame" x="177.5" y="408" width="20" height="20"/>
+                                <rect key="frame" x="177.5" y="320.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="XYu-LJ-754" firstAttribute="top" secondItem="1Wb-NU-G0A" secondAttribute="bottom" constant="8" id="34v-7J-alo"/>
-                            <constraint firstItem="FS6-e2-bQ2" firstAttribute="centerX" secondItem="jFS-vL-vOX" secondAttribute="centerX" id="EE0-1R-a8X"/>
-                            <constraint firstItem="FS6-e2-bQ2" firstAttribute="centerY" secondItem="jFS-vL-vOX" secondAttribute="centerY" id="af4-uQ-sZ7"/>
+                            <constraint firstItem="FS6-e2-bQ2" firstAttribute="top" secondItem="jFS-vL-vOX" secondAttribute="top" constant="180" id="3JW-iT-JZs"/>
+                            <constraint firstItem="FS6-e2-bQ2" firstAttribute="centerX" secondItem="jFS-vL-vOX" secondAttribute="centerX" id="mqh-RQ-5nN"/>
                             <constraint firstItem="XYu-LJ-754" firstAttribute="centerX" secondItem="jFS-vL-vOX" secondAttribute="centerX" id="qGO-lg-Hf0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jFS-vL-vOX"/>
@@ -409,7 +417,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tUH-Rr-sGr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="688.79999999999995" y="-106.59670164917542"/>
+            <point key="canvasLocation" x="1327" y="-107"/>
         </scene>
     </scenes>
 </document>

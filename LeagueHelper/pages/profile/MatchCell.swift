@@ -61,10 +61,10 @@ class MatchCell: UITableViewCell {
     
     private func setResult(ps: ParticipantStats) {
         if ps.win {
-            resultLabel.text = "Win"
-            resultLabel.textColor = UIColor.green
+            resultLabel.text = "Victory"
+            resultLabel.textColor = UIColor.blue
         } else {
-            resultLabel.text = "Loss"
+            resultLabel.text = "Defeat"
             resultLabel.textColor = UIColor.red
         }
     }
